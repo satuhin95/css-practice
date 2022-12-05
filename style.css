@@ -1,0 +1,35 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.box{
+	width: 300px;
+	position: relative;
+}
+.box img{
+	width: 100%;
+	display: block;
+}
+ .mystyle{
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	background: red;
+	top: 0;
+	left: 0;
+	opacity: .7;
+	transition: .4s ease;
+	transform: scale(0);
+}
+.text{
+	color: #fff;
+	font-size: 20px;
+	top: 50%;
+	left: 50%;
+	position: absolute;
+	transform: translate(-50%,-50%);
+}
+.box:hover .mystyle{
+	transform: scale(1);
+}
