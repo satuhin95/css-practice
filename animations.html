@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Animations </title>
+</head>
+<body>
+	<canvas id="myCanvas" style="background: black; " width="300px"; height="250px">
+		
+	</canvas>
+
+
+	<script type="text/javascript">
+		var canvas = document.getElementById('myCanvas');
+		var ctx = canvas.getContext("2d");
+		var bolls =[
+		{x:50, y:60, dx:2 ,dy:2, color:"red"},
+		{x:250, y:10, dx:2 ,dy:2, color:"green"},
+		{x:100, y:100, dx:-2 ,dy:2, color:"yellow"},
+		{x:150, y:150, dx:2 ,dy:-2, color:"blue"},
+		];
+
+		function anim() {
+			ctx.clearRect(0,0, 300, 250);
+
+			for (var i = 0; i < bolls.length; i++) {
+				var	boll= bolls[i];
+			if (boll.y ==200 || boll.y ==0) {
+				boll.dy = - boll.dy;
+			}
+			if (boll.x ==250 || boll.x ==0) {
+				boll.dx = - boll.dx;
+			}
+			
+			boll.x = boll.x + boll.dx;
+			boll.y = boll.y + boll.dy;
+			ctx.fillStyle = boll.color;
+			ctx.fillRect(boll.x, boll.y, 50, 50);
+		}
+		}
+		anim();
+		setInterval(anim,22);
+	</script>
+
+</body>
+</html>
